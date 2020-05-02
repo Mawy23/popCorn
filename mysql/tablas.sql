@@ -22,7 +22,7 @@ CREATE TABLE `usuarios` (
   `nombreUsuario` varchar(15) NOT NULL,
   `nombre` varchar(40) NOT NULL,
   `password` varchar(80) NOT NULL,
-  `rol` varchar(10) NOT NULL
+  `rol` varchar(10) NOT NULL,
   PRIMARY KEY(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
