@@ -10,11 +10,11 @@ $juegos = $doc->getElementsByTagName("juego");
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="shortcut icon" type="image/x-icon" href="img/logo/favicon.ico"/>
+<link rel="shortcut icon" type="image/x-icon" href="img/logo/pop.png"/>
 <link rel="stylesheet" type="text/css" href="tabla.css">
 <link rel="stylesheet" type="text/css" href="estilo.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Juegos de Mesa</title>
+<title>Películas</title>
 </head>
 
 <body>
@@ -38,11 +38,11 @@ $juegos = $doc->getElementsByTagName("juego");
 			<thead>
 				<tr>
 					<th>Nombre</th>
-					<th>Compañia</th>
-					<th>Categoría</th>
-					<th>Jugadores</th>
-					<th>Edad</th>
-					<th>Reglas</th>
+					<th>Productora</th>
+					<th>Género</th>
+					<th>Actores</th>
+					<th>Edades</th>
+					<th>Valoración</th>
 				</tr>
 			</thead>
 			<tbody>

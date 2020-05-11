@@ -13,7 +13,7 @@ $juegos = $doc2->getElementsByTagName("juego");
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="shortcut icon" type="image/x-icon" href="img/logo/favicon.ico"/>
+<link rel="shortcut icon" type="image/x-icon" href="img/logo/pop.png"/>
 <link rel="stylesheet" type="text/css" href="tabla.css">
 <link rel="stylesheet" type="text/css" href="estilo.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
