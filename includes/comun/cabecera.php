@@ -1,10 +1,10 @@
 <div id="cabecera">
 	<div class="menuBar">
 		<div class="menuLogo">
-	            <a href="index.php"><img src="img/logo/logoMenu.png" alt="Logo La Estanteria"/></a>
+	            <a href="index.php"><img src="img/logo/LogoMenu.png" alt="Logo PopCorn&Chill"/></a>
 	    </div>
 	    <div class="menuCompanyText">
-	            <p><a href="index.php">La Estantería</a></p>
+	            <p><a href="index.php">PopCorn&Chill</a></p>
 	    </div>
 	</div>
 	<div class="saludo">
