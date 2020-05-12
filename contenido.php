@@ -2,7 +2,7 @@
 
 session_start();
 $doc = new DOMDocument();
-$doc->load("XML/juegos.xml");
+$doc->load("XML/pelis.xml");
 $juegos = $doc->getElementsByTagName("juego");
 //print_r($juegos);exit;
 ?>
@@ -37,6 +37,7 @@ $juegos = $doc->getElementsByTagName("juego");
 		<table>
 			<thead>
 				<tr>
+					//Cambiado a pelis, falta lo de más abajo.
 					<th>Nombre</th>
 					<th>Productora</th>
 					<th>Género</th>

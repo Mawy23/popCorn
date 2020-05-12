@@ -4,7 +4,7 @@ session_start();
 $doc1 = new DOMDocument();
 $doc2 = new DOMDocument();
 $doc1->load("XML/marcas.xml");
-$doc2->load("XML/juegos.xml");
+$doc2->load("XML/pelis.xml");
 $marcas = $doc1->getElementsByTagName("marca");
 $juegos = $doc2->getElementsByTagName("juego");
 //print_r($marcas);exit;

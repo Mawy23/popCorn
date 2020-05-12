@@ -2,7 +2,7 @@
 require_once __DIR__.'/includes/config.php';
 if(isset($_POST['insertar'])){
 	$doc = new DOMDocument();
-	$doc->load("XML/juegos.xml");
+	$doc->load("XML/pelis.xml");
 	$nombre = $_POST['name'];
 	$marca = $_POST['marca'];
 	$categoria = $_POST['tag'];
@@ -28,7 +28,7 @@ if(isset($_POST['insertar'])){
 	$juegoTag->appendChild($downTag);
 
 	$rootTag->appendChild($juegoTag);
-	$doc->save("XML/juegos.xml");
+	$doc->save("XML/pelis.xml");
 }
 ?><!DOCTYPE html>
 <html>
@@ -53,14 +53,14 @@ if(isset($_POST['insertar'])){
 	<?php
 		if (!isset($_SESSION['esAdmin'])) {
 			echo "<h1>Acceso denegado!</h1>";
-			echo "<p>No tienes permisos suficientes para añadir juegos.</p>";
+			echo "<p>No tienes permisos suficientes para añadir nuevas películas.</p>";
 		} else {
 	?>
 		<h1>Consola de administración</h1>
-		<p>Aquí se añaden los juegos al catálogo.</p>
+		<p>Aquí se añaden las películas a la cartelera disponible.</p>
 		<fieldset>
 		<form method = "POST" action = "admin.php">
-			
+			//Cambiar a pelis.
 			<div class="grupo-control">
 				<label>Nombre de juego:</label> <input class="control" type="text" name="name" value="" />
 			</div>
