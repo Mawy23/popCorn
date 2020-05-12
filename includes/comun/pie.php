@@ -10,7 +10,7 @@
 		</div>
 		<div class="bottom-footer">
 			<div class="copyright">
-				&copy; 2019 Todos los derechos Reservados | <a href="">La Estantería SA.</a>
+				&copy; 2019 Todos los derechos Reservados | <a href="">PopCorn&Chill SA.</a>
 			</div>
 
 			<div class="copyright-information">
