@@ -1,79 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<juegosdemesa>
-	<juego>
+<peliculas>
+	<pelicula>
 		<nombre>
-			Catán
+			Detective Pikachu
 		</nombre>
-		<compania>Devir
-		</compania>
-		<categoria>
-			Comercio/Estrategia
-		</categoria>
-		<jugadores>
-			3-4
-		</jugadores>
-		<edad>
+		<productora>
+			Coproducción Estados Unidos-Japón-Reino Unido; Legendary Pictures / Toho / Nintendo
+		</productora>
+		<genero>
+			Comedia/Entretenimiento
+		</genero>
+		<actores>
+			 ‎Ryan Reynolds‎ y ‎Justice Smith
+		</actores>
+		<edades>
+			Todos los públicos
+		</edades>
+		<link>
+			https://www.filmaffinity.com/es/film351741.html
+		</link>
+	</pelicula>
+	<pelicula>
+		<nombre>
+			Malefica 
+		</nombre>
+		<productora>
+			 ‎Walt Disney Pictures‎
+		</productora>
+		<genero>
+			Fantasía/Aventura
+		</genero>
+		<actores>
+			Angelina Jolie, Elle Fanning...
+		</actores>
+		<edades>
 			+12
-		</edad>
-		<descargar>
-			reglas/catan.pdf
-		</descargar>
-	</juego>
-	<juego>
+		</edades>
+		<link>
+			https://www.filmaffinity.com/es/film986989.html
+		</link>
+	</pelicula>
+	<pelicula>
 		<nombre>
-			Risk 
+			Fast and Furious 7
 		</nombre>
-		<compania>Hasbro
-		</compania>
-		<categoria>
-			Guerra/Estrategia
-		</categoria>
-		<jugadores>
-			3-8
-		</jugadores>
-		<edad>
+		<productora>
+			Coproducción Estados Unidos-China; Universal Pictures / Relativity Studios / China Film Co
+		</productora>
+		<genero>
+			Acción
+		</genero>
+		<actores>
+			Vin Diesel, Paul Walker, Jason Statham, Michelle Rodriguez...
+		</actores>
+		<edades>
 			+12
-		</edad>
-		<descargar>
-			reglas/risk.pdf
-		</descargar>
-	</juego>
-	<juego>
+		</edades>
+		<link>
+			https://www.filmaffinity.com/es/film274822.html
+		</link>
+	</pelicula>
+	<pelicula>
 		<nombre>
-			Monopoly
+			Redy Player One
 		</nombre>
-		<compania>Trump
-		</compania>
-		<categoria>
-			Economia/Suerte
-		</categoria>
-		<jugadores>
-			2-6
-		</jugadores>
-		<edad>
-			+3
-		</edad>
-		<descargar>
-			reglas/monopoly.pdf
-		</descargar>
-	</juego>
-	<juego>
-		<nombre>
-			Bang!
-		</nombre>
-		<compania>Devir
-		</compania>
-		<categoria>
-			Estrategia/Rol	
-		</categoria>
-		<jugadores>
-			3-6
-		</jugadores>
-		<edad>
-			+8
-		</edad>
-		<descargar>
-			reglas/bang.pdf
-		</descargar>
-	</juego>
-</juegosdemesa>
+		<productora>
+			Warner Bros. / Amblin Entertainment / De Line Pictures / Village Roadshow / Reliance Entertainment
+		</productora>
+		<genero>
+			Accion/Fantasia	
+		</genero>
+		<actores>
+			Tye Sheridan, Olivia Cooke, Ben Mendelsohn...
+		</actores>
+		<edades>
+			Todos los publicos
+		</edades>
+		<link>
+			https://www.filmaffinity.com/es/film750408.html
+		</link>
+	</pelicula>
+</peliculas>

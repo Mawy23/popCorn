@@ -43,7 +43,7 @@ $juegos = $doc->getElementsByTagName("juego");
 					<th>Género</th>
 					<th>Actores</th>
 					<th>Edades</th>
-					<th>Valoración</th>
+					<th>Link</th>
 				</tr>
 			</thead>
 			<tbody>
