@@ -6,10 +6,10 @@ SET time_zone = "+00:00";
 
 
 --
--- Base de datos: `laestanteria`
+-- Base de datos: `popcorn`
 --
-CREATE DATABASE IF NOT EXISTS `laestanteria` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `laestanteria`;
+CREATE DATABASE IF NOT EXISTS `popcorn` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `popcorn`;
 
 -- --------------------------------------------------------
 
