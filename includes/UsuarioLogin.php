@@ -1,6 +1,6 @@
 <?php
-namespace laestanteria\Aplication;
-use laestanteria\Aplication\Dao\UsuarioLoginDAO;
+namespace popcorn\Aplication;
+use popcorn\Aplication\Dao\UsuarioLoginDAO;
 
 class UsuarioLogin{
 

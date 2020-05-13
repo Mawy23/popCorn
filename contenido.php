@@ -37,7 +37,6 @@ $juegos = $doc->getElementsByTagName("juego");
 		<table>
 			<thead>
 				<tr>
-					//Cambiado a pelis, falta lo de más abajo.
 					<th>Nombre</th>
 					<th>Productora</th>
 					<th>Género</th>

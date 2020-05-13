@@ -1,6 +1,6 @@
 <?php
 
-namespace laestanteria\Aplication;
+namespace popcorn\Aplication;
 
 /**
  * Clase que mantiene el estado global de la aplicación.

@@ -5,7 +5,7 @@
 	 * Parámetros de conexión a la BD
 	 */
 	define('BD_HOST', 'localhost');
-	define('BD_NAME', 'laestanteria');
+	define('BD_NAME', 'popcorn');
 	define('BD_USER', 'root');
 	define('BD_PASS', '');
     /**
@@ -23,7 +23,7 @@
 	spl_autoload_register(function ($class) {
 
 	    // project-specific namespace prefix
-	    $prefix = 'laestanteria\\Aplication\\';
+	    $prefix = 'popcorn\\Aplication\\';
 	    $class = str_replace($prefix, '', $class);
 	    
 	    // base directory for the namespace prefix

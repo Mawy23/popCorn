@@ -1,6 +1,6 @@
 <?php
 
-namespace laestanteria\Aplication\Form;
+namespace popcorn\Aplication\Form;
 
 /**
  * Clase base para la gestión de formularios.

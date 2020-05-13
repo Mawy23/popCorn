@@ -1,6 +1,6 @@
 <?php
 
-namespace laestanteria\Aplication\Form;
+namespace popcorn\Aplication\Form;
 
 use laestanteria\Aplication\UsuarioRegistro;
 

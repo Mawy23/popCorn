@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__.'/includes/config.php';
-use laestanteria\Aplication\Form\FormRegister;
+use popcorn\Aplication\Form\FormRegister;
 
 
 ?><!DOCTYPE html>

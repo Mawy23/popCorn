@@ -1,5 +1,5 @@
 <?php
-namespace  laestanteria\abd;
+namespace  popcorn\abd;
 class Usuario
 {
 
