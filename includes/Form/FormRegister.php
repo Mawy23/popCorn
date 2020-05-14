@@ -2,7 +2,7 @@
 
 namespace popcorn\Aplication\Form;
 
-use laestanteria\Aplication\UsuarioRegistro;
+use popcorn\Aplication\UsuarioRegistro;
 
 /**
  * FormRegister Class
@@ -63,8 +63,8 @@ EOF;
 
         $user['password'] = isset($datos['password']) ? $datos['password'] : null;
 
-        if ( strlen($user['password']) < 5 ) {
-            $result['password'] = '<span>El longitud de la contraseña debe ser de 5 o más caracteres.</span>';
+        if ( strlen($user['password']) < 3 ) {
+            $result['password'] = '<span>El longitud de la contraseña debe ser de 3 o más caracteres.</span>';
         }
 
         $user['repassword'] = isset($datos['repassword']) ? $datos['repassword'] : null;

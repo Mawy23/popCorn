@@ -54,7 +54,7 @@ $pelis = $doc2->getElementsByTagName("peliculas");
 					$fechas=$productora->getElementsByTagName("fundacion");
 					$fecha=$fechas->item(0)->nodeValue;
 
-					
+					$total = 0;
 					
 					?>
 					<tr>

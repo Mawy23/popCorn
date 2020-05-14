@@ -1,7 +1,7 @@
 <?php
-namespace laestanteria\Aplication\Dao;
+namespace popcorn\Aplication\Dao;
 
-use laestanteria\Aplication\Aplication;
+use popcorn\Aplication\Aplication;
 
 class UsuarioRegistroDAO{
 

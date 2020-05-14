@@ -41,7 +41,7 @@
 	});
 
 	// Inicializa la aplicación
-	$app = laestanteria\Aplication\Aplication::getSingleton();
+	$app = popcorn\Aplication\Aplication::getSingleton();
 	$app->init(array('host' => BD_HOST, 'bd' => BD_NAME, 'user' => BD_USER, 'pass' => BD_PASS));
 
 	/**

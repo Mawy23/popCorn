@@ -2,7 +2,7 @@
 
 namespace popcorn\Aplication\Form;
 
-use laestanteria\Aplication\UsuarioLogin;
+use popcorn\Aplication\UsuarioLogin;
 
 /**
  * FormLogin Class
