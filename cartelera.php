@@ -43,9 +43,8 @@ $dao_pelicula = new DAOPelis();
 					<th>Nombre</th>
 					<th>Productora</th>
 					<th>Género</th>
-					<!--<th>Actores</th>
 					<th>Edades</th>
-					<th>Link</th>-->
+					<th>Link</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -61,6 +60,8 @@ $dao_pelicula = new DAOPelis();
 				$nombre = $aux->get_nombre();
 				$productora = $aux->get_productora();
 				$genero = $aux->get_genero();
+				$edades = $aux->get_edades();
+				$link = $aux->get_link();
 
 				?>
 				
@@ -68,6 +69,11 @@ $dao_pelicula = new DAOPelis();
 						<td><?php echo $nombre ?></td>
 						<td><?php echo $productora ?></td>
 						<td><?php echo $genero ?></td>
+						<td><?php echo $edades ?></td>
+						<td>
+						<?php echo "<a  href = " . $link .">Link</a>"?>
+						
+						</td>
 					</tr>	
 
 					<?php

@@ -15,8 +15,10 @@ class DAOPelis extends DAO {
     
     $nombre = $TOUpeli->get_nombre();
     $productora = $TOUpeli->get_productora();
-    $genero = $TOUpeli->get_genero();
-		$sql = "INSERT INTO peliculas SET nombre='$nombre' , productora ='$productora', genero='$genero'";
+		$genero = $TOUpeli->get_genero();
+		$edades = $TOUpeli->get_edades();
+		$link = $TOUpeli->get_link();
+		$sql = "INSERT INTO peliculas SET nombre='$nombre' , productora ='$productora', genero='$genero', edades='$edades', link='$link'";
 		
 		if (!$this->insertarConsulta($sql))
 			return false;
@@ -32,7 +34,7 @@ class DAOPelis extends DAO {
     $array = [];
     while($result = mysqli_fetch_assoc($query)){
       
-        $peli = new TOUpeli($result['nombre'], $result['productora'], $result['genero']);
+        $peli = new TOUpeli($result['nombre'], $result['productora'], $result['genero'], $result['edades'], $result['link']);
         array_push($array, $peli);
     }
      
@@ -47,7 +49,7 @@ class DAOPelis extends DAO {
 		else 
 		{
 			$result = $this->ejecutarConsulta($sql);
-			$user = new TOUpeli($result['nombre'],$result['productora'],$result['genero']);
+			$user = new TOUpeli($result['nombre'],$result['productora'],$result['genero'], $result['edades'], $result['link']);
 			return $user;
 		}
 	}

@@ -3,7 +3,7 @@
 session_start();
 $doc1 = new DOMDocument();
 $doc1->load("XML/compañias.xml");
-$compañias = $doc1->getElementsByTagName("compañias");
+$compañias = simplexml_load_file("XML/compañias.xml");
 ?>
 
 <!DOCTYPE html>
@@ -42,36 +42,17 @@ $compañias = $doc1->getElementsByTagName("compañias");
 			</thead>
 			<tbody>
 				<?php
-				foreach($compañias as $productora){
-
-					$name=$productora->getElementsByTagName("nombre");
-					$nombre=$name->item(0)->nodeValue;
-
-					$fechas=$productora->getElementsByTagName("fundacion");
-					$fecha=$fechas->item(0)->nodeValue;
-
-					$name=$productora->getElementsByTagName("nombre");
-					$nombre=$name->item(1)->nodeValue;
-
-					$fechas=$productora->getElementsByTagName("fundacion");
-					$fecha=$fechas->item(1)->nodeValue;
-
-					$name=$productora->getElementsByTagName("nombre");
-					$nombre=$name->item(2)->nodeValue;
-
-					$fechas=$productora->getElementsByTagName("fundacion");
-					$fecha=$fechas->item(2)->nodeValue;
-
-					$name=$productora->getElementsByTagName("nombre");
-					$nombre=$name->item(3)->nodeValue;
-
-					$fechas=$productora->getElementsByTagName("fundacion");
-					$fecha=$fechas->item(3)->nodeValue;
+			
+				foreach($compañias->children() as $productora){
+					
+					
+					
+				
 					
 					?>
 					<tr>
-						<td><?php echo $nombre?></td>
-						<td><?php echo $fecha?></td>
+						<td><?php echo  $productora->nombre . "<br>";?></td>
+						<td><?php echo $productora->fundacion . "<br>";?></td>
 						
 					</tr>
 					<?php

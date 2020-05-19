@@ -1,35 +1,27 @@
 <?php
 require_once __DIR__.'/includes/config.php';
+require_once("includes/DAO/pelisDAO.php");
+require_once("includes/DAO/pelis.php");
 if(isset($_POST['insertar'])){
 	$doc = new DOMDocument();
 	$doc->load("XML/pelis.xml");
-	$nombre = $_POST['name'];
-	$marca = $_POST['marca'];
-	$categoria = $_POST['tag'];
-	$jugadores = $_POST['players'];
-	$edad = $_POST['age'];
-	$link = "reglas/".$_POST['pdf'];
+	$nombre = $_POST['nombre'];
+	$productora = $_POST['productora'];
+	$genero = $_POST['genero'];
+	$edades = $_POST['edades'];
+	$link = $_POST['link'];
+	
+	$pelicula = new TOUpeli();
+	$dao_pelicula = new DAOPelis();
 
-	$rootTag = $doc->getElementsByTagName("juegosdemesa")->item(0);
-
-	$juegoTag = $doc->createElement("juego");
-	$nombreTag = $doc->createElement("nombre",$nombre);
-	$marcaTag = $doc->createElement("compania",$marca);
-	$categoriaTag = $doc->createElement("categoria",$categoria);
-	$jugadoresTag = $doc->createElement("jugadores", $jugadores);
-	$edadTag = $doc->createElement("edad", $edad);
-	$downTag = $doc->createElement("descargar", $link);
-
-	$juegoTag->appendChild($nombreTag);
-	$juegoTag->appendChild($marcaTag);
-	$juegoTag->appendChild($categoriaTag);
-	$juegoTag->appendChild($jugadoresTag);
-	$juegoTag->appendChild($edadTag);
-	$juegoTag->appendChild($downTag);
-
-	$rootTag->appendChild($juegoTag);
-	$doc->save("XML/pelis.xml");
+	$pelicula->set_nombre($nombre);
+	$pelicula->set_productora($productora);
+	$pelicula->set_genero($genero);
+	$pelicula->set_edades($edades);
+	$pelicula->set_link($link);
+	$dao_pelicula->insert_Peli($pelicula);
 }
+
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -51,40 +43,37 @@ if(isset($_POST['insertar'])){
 	<div id="contenido">
 
 	<?php
-		if (!isset($_SESSION['esAdmin'])) {
+		/*if (!isset($_SESSION['esAdmin'])) {
 			echo "<h1>Acceso denegado!</h1>";
 			echo "<p>No tienes permisos suficientes para añadir nuevas películas.</p>";
-		} else {
+		} else {*/
 	?>
 		<h1>Consola de administración</h1>
 		<p>Aquí se añaden las películas a la cartelera disponible.</p>
 		<fieldset>
 		<form method = "POST" action = "admin.php">
-			//Cambiar a pelis.
+		
 			<div class="grupo-control">
-				<label>Nombre de juego:</label> <input class="control" type="text" name="name" value="" />
+				<label>Nombre de la película:</label> <input class="control" type="text" name="nombre" value="" />
 			</div>
 			<div class="grupo-control">
-				<label>Compañia:</label> <input class="control" type="text" name="marca" value="" />
+				<label>Productora:</label> <input class="control" type="text" name="productora" value="" />
 			</div>
 			<div class="grupo-control">
-				<label>Categorias:</label> <input class="control" type="text" name="tag" value="" />
+				<label>Género:</label> <input class="control" type="text" name="genero" value="" />
 			</div>
 			<div class="grupo-control">
-				<label>Jugadores:</label> <input class="control" type="text" name="players" value="" />
+				<label>Edad:</label> <input class="control" type="text" name="edades" value="" />
 			</div>
 			<div class="grupo-control">
-				<label>Edad:</label> <input class="control" type="text" name="age" value="" />
-			</div>
-			<div class="grupo-control">
-				<label>Nombre pdf:</label> <input class="control" type="text" name="pdf" value="" />
+				<label>Link:</label> <input class="control" type="text" name="link" value="" />
 			</div>
 			<div class="grupo-control"><button type="submit" name="insertar">Añadir</button></div>
 		</form>
 		</fieldset>
 
 	<?php
-		}
+		/*}*/
 	?>
 	</div>
 
