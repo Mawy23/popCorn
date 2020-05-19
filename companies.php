@@ -2,11 +2,8 @@
 
 session_start();
 $doc1 = new DOMDocument();
-$doc2 = new DOMDocument();
 $doc1->load("XML/compañias.xml");
-$doc2->load("XML/pelis.xml");
 $compañias = $doc1->getElementsByTagName("compañias");
-$pelis = $doc2->getElementsByTagName("peliculas");
 //print_r($marcas);exit;
 ?>
 
@@ -53,8 +50,6 @@ $pelis = $doc2->getElementsByTagName("peliculas");
 
 					$fechas=$productora->getElementsByTagName("fundacion");
 					$fecha=$fechas->item(0)->nodeValue;
-
-					$total = 0;
 					
 					?>
 					<tr>
