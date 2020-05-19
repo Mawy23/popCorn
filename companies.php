@@ -4,7 +4,6 @@ session_start();
 $doc1 = new DOMDocument();
 $doc1->load("XML/compañias.xml");
 $compañias = $doc1->getElementsByTagName("compañias");
-//print_r($marcas);exit;
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +49,24 @@ $compañias = $doc1->getElementsByTagName("compañias");
 
 					$fechas=$productora->getElementsByTagName("fundacion");
 					$fecha=$fechas->item(0)->nodeValue;
+
+					$name=$productora->getElementsByTagName("nombre");
+					$nombre=$name->item(1)->nodeValue;
+
+					$fechas=$productora->getElementsByTagName("fundacion");
+					$fecha=$fechas->item(1)->nodeValue;
+
+					$name=$productora->getElementsByTagName("nombre");
+					$nombre=$name->item(2)->nodeValue;
+
+					$fechas=$productora->getElementsByTagName("fundacion");
+					$fecha=$fechas->item(2)->nodeValue;
+
+					$name=$productora->getElementsByTagName("nombre");
+					$nombre=$name->item(3)->nodeValue;
+
+					$fechas=$productora->getElementsByTagName("fundacion");
+					$fecha=$fechas->item(3)->nodeValue;
 					
 					?>
 					<tr>
