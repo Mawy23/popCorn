@@ -17,7 +17,7 @@ use popcorn\Aplication\Form\FormLogin;
 
 <?php
 	require("includes/comun/cabecera.php");
-	require("includes/comun/sidebarIzq.php");
+
 ?>
 
 	<div id="contenido">

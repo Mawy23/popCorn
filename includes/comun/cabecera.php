@@ -8,11 +8,11 @@
 	    </div>
 	</div>
 	<div class = "menu">
-	<ul class = "align-left">
-		<a href="index.php">INICIO</a>
-		<a href="cartelera.php">CARTELERA</a>		
-		<a href="companies.php">COMPAÑIAS</a>
-		<a href="admin.php">ADMINISTRAR</a> 	
+	<ul class = "align-left ul ">
+		<li class = "li"><a href="index.php">INICIO  </a></li>
+		<li class = "li"><a href="cartelera.php">CARTELERA</a></li>		
+		<li class = "li"><a href="companies.php">COMPAÑIAS</a></li>
+		<li class = "li"><a href="admin.php">ADMINISTRAR</a> </li>	
 	</ul>
 	
 	<div class = "align-right" >

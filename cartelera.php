@@ -26,7 +26,7 @@ $dao_pelicula = new DAOPelis();
 
 <?php
 	require("includes/comun/cabecera.php");
-	require("includes/comun/sidebarIzq.php");
+
 ?>
 
 	<div id="tablas">

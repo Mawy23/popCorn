@@ -33,11 +33,10 @@ if(isset($_POST['insertar'])){
 
 <body>
 
-<div id="contenedor">
+<div id="contenedor2">
 
 <?php
 	require("includes/comun/cabecera.php");
-	require("includes/comun/sidebarIzq.php");
 ?>
 
 	<div id="contenido">

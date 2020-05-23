@@ -11,7 +11,7 @@ require_once __DIR__.'/includes/config.php';
 
 <body>
 
-<div id="contenedor">
+<div id="contenedor2">
 
 <?php
 	require("includes/comun/cabecera.php");
