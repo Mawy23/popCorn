@@ -12,44 +12,44 @@ $dao_pelicula = new DAOPelis();
 
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel="shortcut icon" type="image/x-icon" href="img/logo/pop.png"/>
-<link rel="stylesheet" type="text/css" href="tabla.css">
-<link rel="stylesheet" type="text/css" href="estilo.css" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Películas</title>
+  <link rel="shortcut icon" type="image/x-icon" href="img/logo/pop.png" />
+  <link rel="stylesheet" type="text/css" href="tabla.css">
+  <link rel="stylesheet" type="text/css" href="estilo.css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Películas</title>
 </head>
 
 <body>
 
-<div id="contenedor2">
+  <div id="contenedor2">
 
-<?php
+    <?php
 	require("includes/comun/cabecera.php");
-
 ?>
 
-	<div id="tablas">
+    <div id="tablas">
 
-	<?php
+      <?php
 		if (!isset($_SESSION['login'])) {
 			echo "<h1>Usuario no registrado!</h1>";
 			echo "<p>Debes iniciar sesión para ver el contenido..</p>";
 		} else {
 	?>
-		<table>
-			<thead>
-				<tr>
-					<th>Nombre</th>
-					<th>Productora</th>
-					<th>Género</th>
-					<th>Edades</th>
-					<th>Link</th>
-				</tr>
-			</thead>
-			<tbody>
+      <table id = "tabla-cartelera">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Productora</th>
+            <th>Género</th>
+            <th>Edades</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
 
-			<?php
+          <?php
 
 			$resultado = $dao_pelicula->showalldata();
 
@@ -64,39 +64,40 @@ $dao_pelicula = new DAOPelis();
 				$link = $aux->get_link();
 
 				?>
-				
-				<tr>
-						<td><?php echo $nombre ?></td>
-						<td><?php echo $productora ?></td>
-						<td><?php echo $genero ?></td>
-						<td><?php echo $edades ?></td>
-						<td>
-						<?php echo "<a  href = " . $link .">Link</a>"?>
-						
-						</td>
-					</tr>	
 
-					<?php
+          <tr>
+            <td><?php echo $nombre ?></td>
+            <td><?php echo $productora ?></td>
+            <td><?php echo $genero ?></td>
+            <td><?php echo $edades ?></td>
+            <td>
+              <?php echo "<a  href = " . $link .">Link</a>"?>
+
+            </td>
+          </tr>
+
+          <?php
 			
 			}
 
 			?>
-				
-					
-					<?php
+
+
+          <?php
 				}
 				?>
-			</tbody>
-		</table>
-	
-	</div>
+        </tbody>
+      </table>
 
-<?php
+    </div>
+
+    <?php
 	require("includes/comun/pie.php");
 ?>
 
 
-</div>
+  </div>
 
 </body>
+
 </html>

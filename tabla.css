@@ -1,11 +1,11 @@
 #tablas{
-	margin:150px auto;
+	margin:120px auto;
 	width: 600px;
 }
 
 
 table{
-background-color: white;
+background-color: rgb(161, 101, 60);
 width: 100%;
 text-align:left;
 border-collapse: collapse;
@@ -16,8 +16,8 @@ th, td{
 }
 
 thead{
-	background-color: #246355;
-	border-bottom: solid 5px #0f362d; 
+	background-color: #5a2d3b;
+	border-bottom: solid 5px black; 
 	color: white;
 }
 
@@ -26,7 +26,7 @@ tr:nth-child(even){
 }
 
 tr:hover td{
-	background-color:#369681;
-	color: white;
+	background-color: #111111;
+	color: red;
 
 }

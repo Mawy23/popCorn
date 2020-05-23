@@ -18,7 +18,7 @@ div#contenedor2 {
 	width: 1200px;
 	margin: auto;
 	border: 1px solid black;
-	background-color: #ffffff;
+	background-color: white;
 	margin-top: 30px;
 }
 div#opciones{
@@ -29,13 +29,13 @@ div#opciones{
 div#cabecera {
 	padding: 35px;
 	height: 100px;
-	background-color: #4de0f3;
+	background-color: #5a2d3b;
 	color: white;
 	
 }
 
 div#cabecera a, div#cabecera a:visited {
-	color: black;
+	color: rgb(209, 196, 196);
 	font-weight: bold;
 	text-decoration: none;
 	
@@ -50,8 +50,8 @@ div#cabecera a:hover {
 div.menu{
 	
 	display: block	;
-	background-color: #4de0f3;
-	color: black;
+	background-color: #5a2d3b;
+	color: rgb(209, 196, 196);
 	align-content:space-between;
 	width: 100%;
 	
@@ -77,7 +77,7 @@ div.menu{
   margin: 0;
   padding: 0;
   overflow: hidden;
-	background-color: #4de0f3;
+	background-color: #5a2d3b;
 	height: fit-content;
 }
 
@@ -97,36 +97,6 @@ div.menu{
   background-color: #111111;
 }
 
-
-
-div#sidebar-left {
-	padding: 10px;
-	float: left;
-	width: 170px;
-	height: 600px;
-	background-color: #dddddd;
-}
-
-div#sidebar-left a, div#sidebar-left a:visited {
-	color: black;
-	font-weight: bold;
-	text-decoration: none;
-} 
-
-div#sidebar-left a:hover {
-	color: black;
-	text-decoration: underline;
-} 
-
-
-div#sidebar-right {
-	padding: 5px;
-	float: right;
-	width: 170px;
-	height: 400px;
-	background-color: #dddddd;
-}
-
 div#contenido {
 	padding: 10px;
 	float: left;
@@ -138,13 +108,17 @@ div#contenido {
 div#pie {
 	clear: both;
 	padding: 10px;
-	background-color: #4de0f3;
+	background-color: #5a2d3b;
 	color: white;
 }
 
 div.saludo {
 
 	text-align: right;
+}
+
+.align-center{
+	align-content: center;
 }
 
 fieldset .control {
@@ -164,7 +138,7 @@ fieldset {
 
 legend {
 	color: #fff;
-	background: #4de0f3;
+	background: #5a2d3b;
 	border: 1px solid black;
 	padding: 2px 6px;
 } 
@@ -191,7 +165,7 @@ label {
 
 .menuCompanyText {
     width: 30%;
-    background: #4de0f3;
+    background: #5a2d3b;
     box-sizing: border-box;
     letter-spacing: 1px;
 }
@@ -216,8 +190,8 @@ label {
 /* Footer */
 footer {
     width: 100%;
-    background-color: #4de0f3;
-		color: black;
+    background-color: #5a2d3b;
+		color: rgb(209, 196, 196);
 }
 
 .main-footer {
