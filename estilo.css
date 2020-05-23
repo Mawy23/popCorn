@@ -21,6 +21,10 @@ div#contenedor2 {
 	background-color: #ffffff;
 	margin-top: 30px;
 }
+div#opciones{
+	display: block;
+	align-content: space-between;
+}
 
 div#cabecera {
 	padding: 30px;
@@ -42,6 +46,32 @@ div#cabecera a:hover {
 	font-weight: bold;
 	text-decoration: underline;
 } 
+
+div.menu{
+	
+	display: block	;
+	background-color: #4de0f3;
+	color: black;
+	align-content:space-between;
+	width: 100%;
+	
+}
+
+.align-right{
+	float: right;
+	width: 40%;	
+}
+
+.align-left{
+	float: left;
+	width: 40%;
+	
+}
+
+.saludo-der{
+	text-align: right;
+}
+
 
 
 div#sidebar-left {
@@ -88,7 +118,7 @@ div#pie {
 }
 
 div.saludo {
-	width: 100%;
+
 	text-align: right;
 }
 
