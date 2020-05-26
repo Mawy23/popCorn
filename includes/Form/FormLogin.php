@@ -14,23 +14,20 @@ class FormLogin extends Form
         parent::__construct('form-login');
     }
 
-    protected function generaCamposFormulario($datos, $errores)
+    protected function generaCamposFormulario()
     {
-        $nombreUsuario = isset($datos['nombreUsuario']) ? $datos['nombreUsuario'] : '';
-
-        $error['nombreUsuario'] = isset($errores['nombreUsuario']) ? $errores['nombreUsuario'] : '';
-        $error['login'] = isset($errores['login']) ? $errores['login'] : '';
+        
 
         $html = <<<EOF
         <fieldset>
             <legend>Usuario y Contraseña</legend>
             <div class="grupo-control">
-                <label>Nombre de usuario:</label><input type="text" name="nombreUsuario" id="nombreUsuario" value="$nombreUsuario">
-                ${error['nombreUsuario']}
+                <label>Nombre de usuario:</label><input type="text" name="nombreUsuario" id="nombreUsuario" >
+                
             </div>
             <div class="grupo-control">   
                <label>Contraseña:</label> <input type="password" name="password" id="password" >
-                ${error['login']}
+                
             </div>
             <div class="grupo-control">
               <button type="submit" name="login">Entrar</button>
@@ -42,6 +39,7 @@ EOF;
 
     protected function procesaFormulario($datos)
     {
+
         $result = array();
         $user = array();
 

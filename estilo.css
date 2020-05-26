@@ -252,3 +252,8 @@ footer {
 .copyright-information a {
     color: #C7C7C7;
 }
+
+#universitario{
+	text-align: center bottom;
+	margin-bottom: 5px;
+}

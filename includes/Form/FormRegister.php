@@ -13,33 +13,22 @@ class FormRegister extends Form
         parent::__construct('form-register');
     }
 
-    protected function generaCamposFormulario($datos, $errores)
+    protected function generaCamposFormulario()
     {
-        $name = isset($datos['nombre']) ? $datos['nombre'] : '';
-        $nombreUsuario = isset($datos['nombreUsuario']) ? $datos['nombreUsuario'] : '';
-
-        $error['nombre'] = isset($errores['nombre']) ? $errores['nombre'] : '';
-        $error['nombreUsuario'] = isset($errores['nombreUsuario']) ? $errores['nombreUsuario'] : '';
-        $error['password'] = isset($errores['password']) ? $errores['password'] : '';
-        $error['repassword'] = isset($errores['repassword']) ? $errores['repassword'] : '';
-
+        
         $html = <<<EOF
         <fieldset>
             <div class="grupo-control">
-                <label>Nombre completo:</label> <input type="text" name="nombre" id="nombre"  value="$name">
-                ${error['nombre']}
+                <label>Nombre completo:</label> <input type="text" name="nombre" id="nombre"  >
             </div>
             <div class="grupo-control">
-                <label>Nombre de usuario:</label><input type="text" name="nombreUsuario" id="nombreUsuario"  value="$nombreUsuario">
-                ${error['nombreUsuario']}
+                <label>Nombre de usuario:</label><input type="text" name="nombreUsuario" id="nombreUsuario"  >
              </div>
             <div class="grupo-control">
                 <label>Contraseña:</label><input type="password" name="password" id="password" >
-                ${error['password']}
              </div>
             <div class="grupo-control">
                  <label>Vuelve a introducir la contraseña:</label><input type='password' name="repassword" id="repassword">
-                ${error['repassword']}
             </div>
             <div>
                 <div class="grupo-control"><button type="submit" name="registro">Registrar</button></div>

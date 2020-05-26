@@ -49,8 +49,7 @@ abstract class Form
      *
      * @param array $opciones (ver más arriba).
      */
-    public function __construct($formId, $opciones = array() )
-    {
+    public function __construct($formId, $opciones = array() ){
         $this->formId = $formId;
 
         $opcionesPorDefecto = array( 'action' => null, );
@@ -89,7 +88,7 @@ abstract class Form
      *
      * @return string HTML asociado a los campos del formulario.
      */
-    protected function generaCamposFormulario($datosIniciales,$errores)
+    protected function generaCamposFormulario()
     {
         return '';
     }

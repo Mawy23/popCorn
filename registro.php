@@ -16,11 +16,10 @@ use popcorn\Aplication\Form\FormRegister;
 
 <body>
 
-  <div id="contenedor">
+  <div id="contenedor2">
 
     <?php
 	require("includes/comun/cabecera.php");
-
 ?>
 
     <div id="contenido">
