@@ -20,16 +20,21 @@ session_destroy();
 
 <body>
 
-<div id="contenedor">
+<div id="contenedor2">
 
 <?php
 	require("includes/comun/cabecera.php");
+	if(!isset($_SESSION)) 
+	{ 
+			session_start(); 
+	} 
+	session_destroy();
+	header("Location:index.php");
+	exit;
 
 ?>
 
-	<div id="contenido">
-		<h1>Hasta pronto!</h1>
-	</div>
+
 
 <?php
 	require("includes/comun/pie.php");

@@ -39,8 +39,63 @@ EOF;
 
     protected function procesaFormulario($datos)
     {
+        
+        $_SESSION['error_login'] = [];
+	    $username = isset($datos['nombreUsuario']) ? $datos['nombreUsuario'] : null;
+	    $password = isset($datos['password']) ? $datos['password'] : null;
 
-        $result = array();
+	    if (empty($username) ) {
+	        $_SESSION['error_login'][] = "El nombre de usuario no puede estar vacío";
+	    }
+
+	    if (empty($password) ) {
+	        $_SESSION['error_login'][] = "El password no puede estar vacío.";
+        }
+        
+        
+        
+
+	    if (count($_SESSION['error_login']) == 0)  {
+            $usuario = UsuarioLogin::login($username, $password);
+            if ($usuario !== false) {
+                $_SESSION['login'] = true;
+                $_SESSION['nombre'] = $username;
+                $_SESSION['esAdmin'] = strcmp($datos['rol'], 'admin') == 0 ? true : false;
+                $result = 'index.php';
+            }else {
+                $result['login'] = '<span>Nombre de usuario o contraseña incorrectos</span>';
+            }
+        }
+        
+        return $result;
+
+	        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*$result = array();
         $user = array();
 
         $user['nombreUsuario'] = isset($datos['nombreUsuario']) ? $datos['nombreUsuario'] : null;
@@ -62,6 +117,6 @@ EOF;
             }
         }
 
-        return $result;
+        return $result;*/
     }
 }

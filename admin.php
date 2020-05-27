@@ -42,11 +42,12 @@ if(isset($_POST['insertar'])){
 	<div id="contenido">
 
 	<?php
-		/*if (!isset($_SESSION['esAdmin'])) {
+		if (!isset($_SESSION['admin'])) {
 			echo "<h1>Acceso denegado!</h1>";
-			echo "<p>No tienes permisos suficientes para añadir nuevas películas.</p>";
-		} else {*/
+			echo "<h3>Solo los administradores pueden administrar la página.</h3>";
+		} else {
 	?>
+	
 		<h1>Consola de administración</h1>
 		<p>Aquí se añaden las películas a la cartelera disponible.</p>
 		<fieldset>
@@ -72,7 +73,7 @@ if(isset($_POST['insertar'])){
 		</fieldset>
 
 	<?php
-		/*}*/
+		}
 	?>
 	</div>
 

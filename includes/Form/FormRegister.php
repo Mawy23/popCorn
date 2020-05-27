@@ -30,6 +30,9 @@ class FormRegister extends Form
             <div class="grupo-control">
                  <label>Vuelve a introducir la contraseña:</label><input type='password' name="repassword" id="repassword">
             </div>
+            <div class="grupo-control">
+                <label>Admin:</label><input type="checkbox" name="admin" id="admin" >
+             </div>
             <div>
                 <div class="grupo-control"><button type="submit" name="registro">Registrar</button></div>
             </div>
@@ -40,47 +43,41 @@ EOF;
 
     protected function procesaFormulario($datos)
     {
-        $result = array();
-        $user = array();
-
-        $user['nombre'] = isset($datos['nombre']) ? $datos['nombre'] : null;
-
-        if ( empty($user['nombre']) || mb_strlen($user['nombre']) < 5 ) {
-            $result['nombre'] = '<span>El nombre tiene que tener una longitud de al menos 5 caracteres.</span>';
+        $id_user = "";
+        $username = htmlspecialchars(trim(strip_tags($datos['nombreUsuario']))); 
+        $nombre = htmlspecialchars(trim(strip_tags($datos['nombre']))); 
+        $password = htmlspecialchars(trim(strip_tags($datos['password']))); 
+        $password2 = htmlspecialchars(trim(strip_tags($datos['repassword']))); 
+        $rol = $datos['admin']; 
+        $_SESSION['error_registro'] = [];
+        
+        if ($password != $password2) {  
+            $_SESSION['error_registro'][] = "Las contraseñas introducidas no coinciden";
         }
-
-
-        $user['password'] = isset($datos['password']) ? $datos['password'] : null;
-
-        if ( strlen($user['password']) < 3 ) {
-            $result['password'] = '<span>El longitud de la contraseña debe ser de 3 o más caracteres.</span>';
+        if (empty($username) ) {    
+            $_SESSION['error_registro'][] = "El usuario no puede estar vacío";
         }
-
-        $user['repassword'] = isset($datos['repassword']) ? $datos['repassword'] : null;
-
-        if ( strcmp($user['repassword'], $user['password']) !== 0 ) {
-            $result['repassword'] = '<span>Las contraseñas deben coincidir.</span>';
+        if ( empty($password) || empty($password2)) {
+            $_SESSION['error_registro'][] = "La contraseñas no puede estar vacía";
+        }  
+        $encrypted = password_hash($password,PASSWORD_BCRYPT); 
+        if (count($_SESSION['error_registro']) == 0)  {
+            if(isset($rol)){
+                $admin = 1;
+            }
+            UsuarioRegistro::crea($username, $nombre, $password, $admin);
+            $_SESSION['login'] = true;                
+            $_SESSION['nombre'] = $username;
+            if($admin == 1){
+                $_SESSION['admin']= '1';
+            }else{
+                $_SESSION['admin']= '0';
+            }
+            
+            return "index.php";        
         }
-
-
-        $user['nombreUsuario'] = isset($datos['nombreUsuario']) ? $datos['nombreUsuario'] : null;
-
-        if ( empty($user['nombreUsuario']) || mb_strlen($user['nombreUsuario']) < 5) {
-            $result['nombreUsuario'] = '<span>El nombre de usuario tiene que tener una longitud de al menos 5 caracteres.</span>';
+        else {  
+            return "registro.php";
         }
-
-        if (count($result) === 0) {
-            $rol = "user";
-            UsuarioRegistro::crea($user['nombreUsuario'],$user['nombre'],$user['password'], $rol);
-            $_SESSION['login'] = true;
-            $_SESSION['nombre'] = $user['nombreUsuario'];
-            if($rol=== "admin")
-                $_SESSION['admin'] =false;
-            else
-                $_SESSION['admin'] =true;
-            $result = 'index.php';
-        }
-
-        return $result;
     }
 }
