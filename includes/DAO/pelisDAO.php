@@ -11,13 +11,13 @@ class DAOPelis extends DAO {
 	}
 	
 
-	public function insert_Peli($TOUpeli){
+	public function insert_Peli($peli){
     
-    $nombre = $TOUpeli->get_nombre();
-    $productora = $TOUpeli->get_productora();
-		$genero = $TOUpeli->get_genero();
-		$edades = $TOUpeli->get_edades();
-		$link = $TOUpeli->get_link();
+    $nombre = $peli->get_nombre();
+    $productora = $peli->get_productora();
+		$genero = $peli->get_genero();
+		$edades = $peli->get_edades();
+		$link = $peli->get_link();
 		$sql = "INSERT INTO peliculas SET nombre='$nombre' , productora ='$productora', genero='$genero', edades='$edades', link='$link'";
 		
 		if (!$this->insertarConsulta($sql))
@@ -53,18 +53,6 @@ class DAOPelis extends DAO {
 			return $user;
 		}
 	}
-
-
-
-	/*public function update_name($username, $new_name){
-		$sql = sprintf("UPDATE user SET name = '" .$new_name. "' WHERE username = '" .$username. "' ");
-		$result = $this->insertarConsulta($sql);
-		if ($result == null)
-			return null;
-		else 
-			return true;
-	}*/
-
 
 }
 

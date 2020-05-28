@@ -1,48 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery_login.js"></script>
+  
+    <link rel="stylesheet" type="   text/css" href="../css/elementos.css" />
+   
+
+    </head>
+
+</html>
+
+
 <?php
 
-namespace popcorn\Aplication\Form;
+include_once('Form.php');
+require_once('includes\DAO\usuario.php');
+require_once('includes\DAO\usuarioDAO.php');
 
-use popcorn\Aplication\UsuarioLogin;
+class FormLogin extends Form {
 
-/**
- * FormLogin Class
- */
-class FormLogin extends Form
-{
-    public function __construct()
-    {
-        parent::__construct('form-login');
-    }
+	public function __construct(){
+		parent::__construct('login');
+	}
 
-    protected function generaCamposFormulario()
-    {
-        
+	protected function generaCampos(){
+		 $html  =
+		'<fieldset class="fb-col contenido_log_reg" id="contenido_log" >
+			<h1>PopCorn&Chill</h1>
 
-        $html = <<<EOF
-        <fieldset>
-            <legend>Usuario y Contraseña</legend>
-            <div class="grupo-control">
-                <label>Nombre de usuario:</label><input type="text" name="nombreUsuario" id="nombreUsuario" >
-                
+			<div>
+			<input name="username" type="text" id="username" placeholder="Nombre de usuario" required="">
             </div>
-            <div class="grupo-control">   
-               <label>Contraseña:</label> <input type="password" name="password" id="password" >
-                
-            </div>
-            <div class="grupo-control">
-              <button type="submit" name="login">Entrar</button>
-            </div>
-        </fieldset>
-EOF;
+            <br>
+			<div>
+			<input name="password" type="password" id="password" placeholder="Contraseña" required="">
+			</div>
+			<br>    
+			<div>
+			<button type="submit"  name="login id="submit">ENTRAR</button>
+			</div>
+		 </fieldset>';
         return $html;
-    }
+	}
 
-    protected function procesaFormulario($datos)
-    {
-        
-        $_SESSION['error_login'] = [];
-	    $username = isset($datos['nombreUsuario']) ? $datos['nombreUsuario'] : null;
+	protected function procesaFormulario($datos){
+
+	    if(!isset($_SESSION)) 
+	    { 
+	        session_start(); 
+	    } 
+	    
+	    $_SESSION['error_login'] = [];
+	    $username = isset($datos['username']) ? $datos['username'] : null;
 	    $password = isset($datos['password']) ? $datos['password'] : null;
+	    $user = new TOUusuario();
+	    $dao_usuario = new usuarioDAO();
 
 	    if (empty($username) ) {
 	        $_SESSION['error_login'][] = "El nombre de usuario no puede estar vacío";
@@ -50,73 +65,43 @@ EOF;
 
 	    if (empty($password) ) {
 	        $_SESSION['error_login'][] = "El password no puede estar vacío.";
+	    }
+        $userData = $dao_usuario->search_user($username);
+        
+        if($userData->get_admin() == '1'){
+            $_SESSION['admin'] = '1';
+        }else{
+            $_SESSION['admin'] = '0';
         }
-        
-        
-        
 
 	    if (count($_SESSION['error_login']) == 0)  {
-            $usuario = UsuarioLogin::login($username, $password);
-            if ($usuario !== false) {
-                $_SESSION['login'] = true;
-                $_SESSION['nombre'] = $username;
-                $_SESSION['esAdmin'] = strcmp($datos['rol'], 'admin') == 0 ? true : false;
-                $result = 'index.php';
-            }else {
-                $result['login'] = '<span>Nombre de usuario o contraseña incorrectos</span>';
-            }
-        }
-        
-        return $result;
 
-	        
+	        if ($userData == null) {
+	            $_SESSION['error_login'][] = "Usuario y/o contraseña no son correctos.";
+	            return "login.php";
+	        }
+	        else {		
 
+	            $encrypted = $userData->get_password();
+	            if (password_verify($password, $encrypted)) {
+                    $_SESSION['login'] = '1';
+                    
+                    
+	                $_SESSION['username'] = $username;
+	                return "index.php";
+	            }
+	            else {
+	                $_SESSION['error_login'][] = "Usuario y/o contraseña no son correctos";
+	                return "login.php";
+	            }
+	        } 
+	    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*$result = array();
-        $user = array();
-
-        $user['nombreUsuario'] = isset($datos['nombreUsuario']) ? $datos['nombreUsuario'] : null;
-
-        if (empty($user['nombreUsuario'])) {
-            $result['nombreUsuario'] = '<span>El nombre del usuario no puede estar vacío</span>';
-        }
-
-        if (count($result) === 0) {
-            $usuario = UsuarioLogin::login($user['nombreUsuario'], $datos['password']);
-
-            if ($usuario !== false) {
-                $_SESSION['login'] = true;
-                $_SESSION['nombre'] = $user['nombreUsuario'];
-                $_SESSION['esAdmin'] = strcmp($usuario['rol'], 'admin') == 0 ? true : false;
-                $result = 'index.php';
-            } else {
-                $result['login'] = '<span>Nombre de usuario o contraseña incorrectos</span>';
-            }
-        }
-
-        return $result;*/
-    }
+	    else {
+	       return "login.php";
+	    }
+       
+	}
 }
+
+?>

@@ -1,5 +1,5 @@
 body {
-	background-image: url('img/bg2.jpg'); 
+	background-image: url('../img/bg2.jpg'); 
 	background-color: #e6f2ff;
 	font-family: Arial;
 	
@@ -125,7 +125,7 @@ fieldset .control {
 	width: 100%;
 }
 
-fieldset .grupo-control {
+fieldset .campo {
 	margin: 5px;
 }
 

@@ -10,8 +10,8 @@ $compañias = simplexml_load_file("XML/compañias.xml");
 <html>
 <head>
 <link rel="shortcut icon" type="image/x-icon" href="img/logo/pop.png"/>
-<link rel="stylesheet" type="text/css" href="tabla.css">
-<link rel="stylesheet" type="text/css" href="estilo.css" />
+<link rel="stylesheet" type="text/css" href="css/elementos.css">
+<link rel="stylesheet" type="text/css" href="css/estilo.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Compañias</title>
 </head>
