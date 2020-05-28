@@ -20,8 +20,8 @@ require_once __DIR__.'/includes/config.php';
 	require("includes/Form/FormLogin.php");
 ?>
 
-	<div id="contenido">
-		<h1>Acceso al sistema</h1>
+	<div id="contenido-login">
+		<h1 id = "texto-login">Acceso al sistema</h1>
 <?php 
     $form = new FormLogin();
 		$html = $form->gestiona();
@@ -44,8 +44,10 @@ require_once __DIR__.'/includes/config.php';
 				}
 				unset($_SESSION['error_login']);
 			}	 
+		
+		
 ?>
-	</div>
+		</div>
 
 <?php
 	require("includes/comun/pie.php");

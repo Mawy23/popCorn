@@ -23,8 +23,8 @@ use popcorn\Aplication\Form\FormRegister;
   require("includes/Form/FormRegister.php");
 ?>
 
-    <div id="contenido">
-      <h1>Registro de usuario</h1>
+    <div id="contenido-registro">
+      <h1 id = "texto-registro">Registro de usuario</h1>
       <?php 
     $form = new FormRegistro();
     $html = $form->gestiona();

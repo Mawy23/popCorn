@@ -118,10 +118,55 @@ div#contenido {
 	align-content: center;
 }
 
+#texto-registro{
+	text-align: center;
+}
+
+#texto-login{
+	text-align: center;
+}
+#contenido-login{
+	padding: 10px;
+	float: left;
+	min-height: 600px;
+	width: 98%;
+	background-color: white;
+	align-content: center;
+}
+
+#contenido-registro{
+	padding: 5px;
+	float: left;
+	min-height: 600px;
+	width: 98%;
+	background-color: white;
+	align-content: center;
+}
+
 #admin-pos{
 	padding-bottom: 1em;
 }
 #btn-admin{
+	background: #000000;
+  padding: 1em 2em;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+	cursor: pointer;
+	margin-left: 43%;
+}
+
+#btn-registro{
+	background: #000000;
+  padding: 1em 2em;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+	cursor: pointer;
+	margin-left: 43%;
+}
+
+#btn-login{
 	background: #000000;
   padding: 1em 2em;
   color: #fff;

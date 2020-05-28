@@ -42,7 +42,7 @@ require_once('includes\DAO\usuarioDAO.php');
                 </div>
                 <br>
                 <div>
-                    <button type="submit" name="register" id="register" >REGISTRARSE</button>
+                    <button type="submit" name="register" id="btn-registro" >REGISTRARSE</button>
                 </div>                
             
             </fieldset>';
