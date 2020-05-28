@@ -1,11 +1,30 @@
 	#tablas{
 		margin:120px auto;
-		width: 600px;
+		width: 100%;
 	}
 
+	#tabla-cartelera{
+		align-content: center;
+		margin-top: 20px;
+		margin-right: 0%;
+		margin-left: 20px;
+		margin-bottom: 20px;
+		width: 96.5%;
+		height: 100%;
+	}
+
+	#tabla-compañias{
+		align-content: center;
+		margin-top: 20px;
+		margin-right: 0%;
+		margin-left: 20px;
+		margin-bottom: 20px;
+		width: 96.5%;
+		height: 100%;
+	}
 
 	table{
-	background-color: rgb(161, 101, 60);
+	background-color: rgb(124, 124, 124);
 	width: 100%;
 	text-align:left;
 	border-collapse: collapse;
@@ -27,8 +46,12 @@
 
 	tr:hover td{
 		background-color: #111111;
-		color: red;
+		color: white;
 
+	}
+
+	#text-admin{
+		text-align: center;
 	}
 
 

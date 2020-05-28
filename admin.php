@@ -40,19 +40,20 @@ if(isset($_POST['insertar'])){
 	require("includes/comun/cabecera.php");
 ?>
 
-	<div id="contenido">
+	<div >
 
 	<?php
 	
 		if(!isset($_SESSION['login']) || ($_SESSION['admin'] != '1')){
-			echo "<h1>Acceso denegado!</h1>";
-			echo "<h3>Solo los administradores pueden añadir películas la página.</h3>";
+		
+			echo "<h1 class = 'acceso-denegado'>Acceso denegado!</h1>";
+			echo "<h3 class = 'acceso-denegado'>Solo los administradores pueden añadir películas la página.</h3>";
 			
 		} else {
 	?>
 	
-		<h1>Añade ua película para que toda la comunidad pueda disfrutarla</h1>
-		<p>Aquí se añaden las películas a la cartelera disponible.</p>
+		<h2 id ="text-admin">Añade una película para que toda la comunidad pueda disfrutarla</h2>
+		<div id = "admin-pos">
 		<fieldset>
 		<form method = "POST" action = "admin.php">
 		
@@ -70,11 +71,11 @@ if(isset($_POST['insertar'])){
 			</div>
 			<div class="campo">
 				<label>Link:</label> <input class="control" type="text" name="link" />
-			</div>
-			<div class="campo"><button type="submit" name="insertar">Añadir</button></div>
+			</div><br>
+			<div class="campo"><button type="submit" id = "btn-admin" name="insertar">Añadir</button></div>
 		</form>
 		</fieldset>
-
+</div>
 	<?php
 		}
 	?>

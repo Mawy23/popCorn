@@ -15,33 +15,9 @@
 	setLocale(LC_ALL, 'es_ES.UTF.8');
 	date_default_timezone_set('Europe/Madrid');
 
-    /**
-	 * Función para autocargar clases PHP.
-	 *
-	 * @see http://www.php-fig.org/psr/psr-4/
-	 */
-	spl_autoload_register(function ($class) {
-
-	    // project-specific namespace prefix
-	    $prefix = 'popcorn\\Aplication\\';
-	    $class = str_replace($prefix, '', $class);
-	    
-	    // base directory for the namespace prefix
-	    $base_dir = dirname(__FILE__);
-
-	    // replace the namespace prefix with the base directory, replace namespace
-	    // separators with directory separators in the relative class name, append
-	    // with .php
-	    $class = $base_dir . DIRECTORY_SEPARATOR . str_replace("\\", DIRECTORY_SEPARATOR, $class) . '.php';
-
-	    // if the file exists, require it
-	    if (file_exists($class)) {
-	        require_once $class;
-	    }
-	});
 
 	// Inicializa la aplicación
-	$app = popcorn\Aplication\Aplication::getSingleton();
+	$app = Aplicacion::getSingleton();
 	$app->init(array('host' => BD_HOST, 'bd' => BD_NAME, 'user' => BD_USER, 'pass' => BD_PASS));
 
 	/**

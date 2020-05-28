@@ -36,7 +36,7 @@ class usuarioDAO extends DAO {
 
 	
 	public function search_user($username){
-		$sql = sprintf("SELECT * FROM usuarios WHERE nombreUsuario = '$username'");
+		$sql = sprintf("SELECT * FROM usuarios WHERE nombreUsuario = '" .$username. "'");
 		if (!$this->ejecutarConsulta($sql))
 			return null;
 		else 

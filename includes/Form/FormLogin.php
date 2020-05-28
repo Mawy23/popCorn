@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-    <head>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/jquery_login.js"></script>
-  
-    <link rel="stylesheet" type="   text/css" href="../css/elementos.css" />
-   
-
-    </head>
-
-</html>
-
-
 <?php
 
 include_once('Form.php');
@@ -28,9 +12,8 @@ class FormLogin extends Form {
 
 	protected function generaCampos(){
 		 $html  =
-		'<fieldset class="fb-col contenido_log_reg" id="contenido_log" >
+		'<fieldset>
 			<h1>PopCorn&Chill</h1>
-
 			<div>
 			<input name="username" type="text" id="username" placeholder="Nombre de usuario" required="">
             </div>
@@ -66,7 +49,7 @@ class FormLogin extends Form {
 	    if (empty($password) ) {
 	        $_SESSION['error_login'][] = "El password no puede estar vacío.";
 	    }
-        $userData = $dao_usuario->search_user($username);
+        $userData = $dao_usuario->search_user($username);       
         
         if($userData->get_admin() == '1'){
             $_SESSION['admin'] = '1';
@@ -82,10 +65,12 @@ class FormLogin extends Form {
 	        }
 	        else {		
 
+
 	            $encrypted = $userData->get_password();
 	            if (password_verify($password, $encrypted)) {
                     $_SESSION['login'] = '1';
                     
+                
                     
 	                $_SESSION['username'] = $username;
 	                return "index.php";

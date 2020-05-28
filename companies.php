@@ -25,14 +25,15 @@ $compañias = simplexml_load_file("XML/compañias.xml");
 	
 ?>
 
-	<div id="tablas">
+	<div >
 
 	<?php
 		if (!isset($_SESSION['login'])) {
-			echo "<p>Debes iniciar sesión para ver todas nuestras películas</p>";
+			echo "<h1 class = 'acceso-denegado'>Usuario no registrado!</h1>";
+			echo "<p class = 'acceso-denegado'>Debes iniciar sesión para ver el contenido..</p>";
 		} else {
 	?>
-		<table>
+		<table id="tabla-compañias">
 			<thead>
 				<tr>
 					<th>Nombre</th>

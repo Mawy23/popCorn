@@ -42,7 +42,7 @@ div#cabecera a, div#cabecera a:visited {
 } 
 
 div#cabecera a:hover {
-	color: red;
+	color: white;
 	font-weight: bold;
 	text-decoration: underline;
 } 
@@ -97,12 +97,47 @@ div.menu{
   background-color: #111111;
 }
 
+#inicio-popcorn{
+margin-left: 30%;
+}
+
 div#contenido {
 	padding: 10px;
 	float: left;
 	min-height: 600px;
 	width: 900px;
 	background-color: white;
+}
+
+#contenido-inicio{
+	padding: 10px;
+	float: left;
+	min-height: 600px;
+	width: 98%;
+	background-color: white;
+	align-content: center;
+}
+
+#admin-pos{
+	padding-bottom: 1em;
+}
+#btn-admin{
+	background: #000000;
+  padding: 1em 2em;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+	cursor: pointer;
+	margin-left: 43%;
+}
+
+#btn-admin:hover{
+	background-color: #5a2d3b;
+	color: white;
+}
+
+.acceso-denegado{
+	text-align: center;
 }
 
 div#pie {
@@ -197,8 +232,8 @@ footer {
 .main-footer {
 	text-align: center;
     margin: 0 1.5em;
-    padding-top: .75em;
-    padding-bottom: 1.5em;
+    padding-top: .25em;
+    padding-bottom: .25em;
 }
 
 .social-links a {
@@ -228,7 +263,7 @@ footer {
     color: #ccc;
 }
 
-.social-icon {
+.redes-sociales {
     width: 35px;
 }
 
@@ -249,11 +284,9 @@ footer {
     font-weight: bold;
 }
 
-.copyright-information a {
-    color: #C7C7C7;
+#text-admin{
+	text-align: center;
 }
 
-#universitario{
-	text-align: center bottom;
-	margin-bottom: 5px;
-}
+
+

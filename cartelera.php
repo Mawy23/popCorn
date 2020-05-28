@@ -29,12 +29,12 @@ $dao_pelicula = new DAOPelis();
 	require("includes/comun/cabecera.php");
 ?>
 
-    <div id="tablas">
+    <div >
 
       <?php
 		if (!isset($_SESSION['login'])) {
-			echo "<h1>Usuario no registrado!</h1>";
-			echo "<p>Debes iniciar sesión para ver el contenido..</p>";
+			echo "<h1 class = 'acceso-denegado'>Usuario no registrado!</h1>";
+			echo "<p class = 'acceso-denegado'>Debes iniciar sesión para ver el contenido..</p>";
 		} else {
 	?>
       <table id = "tabla-cartelera">

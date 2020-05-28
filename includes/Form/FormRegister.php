@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-    <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/jquery_login.js"></script>
-   
-    </head>
-
-</html>
 <?php
 
 include_once('Form.php');
@@ -23,7 +13,7 @@ require_once('includes\DAO\usuarioDAO.php');
         protected function generaCampos(){
             
             $html =             
-            '<fieldset  class="fb-col contenido_log_reg" id ="contenido_reg">
+            '<fieldset>
                 <h1>ÚNETE A NOSOTROS</h1>
                 
                 <div>
