@@ -32,4 +32,44 @@
 			1967
 		</fundacion>
 	</productora>
+	<productora>
+		<nombre>
+			De line pictures
+		</nombre>
+		<fundacion>
+			1967
+		</fundacion>
+	</productora>
+	<productora>
+		<nombre>
+			20th Century Fox
+		</nombre>
+		<fundacion>
+			31 de mayo de 1935
+		</fundacion>
+	</productora>
+	<productora>
+		<nombre>
+			Marvel Studios
+		</nombre>
+		<fundacion>
+			7 de diciembre de 1993
+		</fundacion>
+	</productora>
+		<productora>
+		<nombre>
+			Columbia pictures
+		</nombre>
+		<fundacion>
+			10 de enero de 1924
+		</fundacion>
+	</productora>
+		<productora>
+		<nombre>
+			DreamWorks Animation
+		</nombre>
+		<fundacion>
+			12 de octubre de 1994
+		</fundacion>
+	</productora>
 </compañias>
