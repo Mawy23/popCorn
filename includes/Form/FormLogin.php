@@ -23,8 +23,8 @@ class FormLogin extends Form {
 			</div>
 			<br>    
 			<div>
-			<button type="submit"  name="login  id ="btn-login">ENTRAR</button>
-			</div>
+                    <button type="submit" name="login" id="btn-login" >ENTRAR</button>
+                </div> 
 		 </fieldset>';
         return $html;
 	}
